@@ -7,9 +7,9 @@ require_once('dbHelper1.php');
 $sql = "SELECT * FROM data WHERE email='$username' and password='$password' and designation='Manager'";
 $res = mysqli_query($con,$sql);
 $check = mysqli_fetch_array($res);
-if($check){
+if(isset($check)){
 echo 'success';
-}else{
+}else
 echo 'failure';
-}
+
 ?>
