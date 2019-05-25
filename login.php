@@ -4,7 +4,7 @@ if(isset($_POST['btnSubmit']))
 {
     $txtEmail = $_POST['txtEmail'];
     $txtPass = $_POST['txtPass'];
-    $query = "select * from t3e5qwphdxcr97rb.tbl_login where email_id='{$txtEmail}' and password='{$txtPass}'";
+    $query = "select * from tbl_login where email_id='{$txtEmail}' and password='{$txtPass}'";
     $result = mysqli_query($conn,$query);
     if($res=mysqli_fetch_array($result))
     {
