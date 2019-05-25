@@ -59,7 +59,7 @@
     <?php        endif;?>
     <div class="container">
     <?php
-    $mysqli = new mysqli('localhost','root','','crud') or die(mysqli_error($mysqli));
+    $mysqli = new mysqli('arfo8ynm6olw6vpn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','ir7tqjrbc7r2a1yt','cz1omzq4rp47hmgf','t3e5qwphdxcr97rb') or die(mysqli_error($mysqli));
     $result = $mysqli->query("SELECT * FROM leave1") or die($mysqli->error);
    // pre_r($result);
  
