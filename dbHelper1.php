@@ -12,9 +12,11 @@ define('DB','t3e5qwphdxcr97rb');
 //Connecting to Database
 
 $con = mysqli_connect(HOST,USER,PASS,DB);
-if(isset($con)){
+if($con){
   echo 'suc';
 }
+else
+  echo 'not suc';
   //or die('Unable to Connect');
 //this query is used to connect PHP files to MySQL database
 ?>
