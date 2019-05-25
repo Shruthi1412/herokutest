@@ -1,12 +1,12 @@
 <?php
 
-$servername = "localhost";
+$servername = "arfo8ynm6olw6vpn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
 //Define your database username here.
-$username = "root";
+$username = "ir7tqjrbc7r2a1yt";
 //Define your database password here.
-$password = "";
+$password = "cz1omzq4rp47hmgf";
 //Define your database name here.
-$dbname = "leave";
+$dbname = "t3e5qwphdxcr97rb";
 require_once('dbHelper.php');
 
 		$res= mysqli_query($con,("SELECT email FROM emailidentify WHERE status='login'"));
