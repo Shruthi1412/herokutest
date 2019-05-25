@@ -35,7 +35,7 @@ if(isset($_POST['btnSubmit']))
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12 col-md-offset-4" style="padding-top: 100px;">
-            <form action="https://leavemanagementheroku.herokuapp.com/login.php" method="post">
+            <form action="login.php" method="post">
                 <div class="panel panel-success">
                     LOGIN
                 </div>
