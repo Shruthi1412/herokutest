@@ -1,12 +1,12 @@
 <?php
-$conn= mysqli_connect('arfo8ynm6olw6vpn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','ir7tqjrbc7r2a1yt','cz1omzq4rp47hmgf','t3e5qwphdxcr97rb');
+$conn= mysql_connect('arfo8ynm6olw6vpn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','ir7tqjrbc7r2a1yt','cz1omzq4rp47hmgf','t3e5qwphdxcr97rb');
 if(isset($_POST['btnSubmit']))
 {
     $txtEmail = $_POST['txtEmail'];
     $txtPass = $_POST['txtPass'];
     $query = "select * from tbl_login where email_id='{$txtEmail}' and password='{$txtPass}'";
-    $result = mysqli_query($conn,$query);
-    if($res=mysqli_fetch_array($result))
+    $result = mysql_query($conn,$query);
+    if($res=mysql_fetch_array($result))
     {
         echo "<script>alert(\"Login Successful\");</script>";
         header("location: https://leavemanagementheroku.herokuapp.com/admin.php");
