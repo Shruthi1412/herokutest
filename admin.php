@@ -8,30 +8,35 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Leave</title>
+    <title>PHP crud!</title>
 </head>
 <body>
  
-    <?php require_once 'process1.php'; ?>
+    <?php require_once 'process.php'; ?>
     
     <div class="row justify-content-center">
-        <form action="process1.php" method="POST">
+        <form action="process.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-    
         <div class="form-group">
-        <label>Leave Type</label>
-        <select name="leavetypes">
-            <option  value="Personal">Personal</option>
-            <option  value="Casual">Casual</option>
-            <option  value="Earned">Earned</option>
-            <option  value="Paid">Paid</option>
-            <option value="Sick">Sick</option>
-        </select>
-        
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" value="<?php echo $name;?>" placeholder="Name">
         </div>
         <div class="form-group">
-        <label>No.Of Leaves</label>
-        <input type="text" name="numleave" class="form-control" value="<?php echo $numleave;?>" placeholder="NoOfLeave">
+        <label>Email</label>
+        <input type="text" name="email" class="form-control" value="<?php echo $email;?>" placeholder="Email">
+        </div>
+        <div class="form-group">
+        <label>Password</label>
+        <input type="passchar" name="password" class="form-control" value="<?php echo $password;?>" placeholder="Password">
+        </div>
+        <div class="form-group">
+        <label>Designation</label>
+        <select name="designation">
+            <option  value="Manager">Manager</option>
+            <option  value="Employee">Employee</option>
+             
+        </select>
+        
         </div>
         <div class="form-group">
             <?php
@@ -43,7 +48,10 @@
             <button type="submit" class="btn btn-primary" name="save">Save</button>
             <?php endif; ?>
         </div>
-           
+        <div class="form-group">
+            <button type="submit" class="btn btn-info" name="leave">Add types of leaves</button>
+                
+        </div>   
         <div class="form-group">
         <button type="submit" class="btn btn-info" name="logout">LOGOUT</button>
                 
@@ -60,7 +68,7 @@
     <div class="container">
     <?php
     $mysqli = new mysqli('localhost','root','','crud') or die(mysqli_error($mysqli));
-    $result = $mysqli->query("SELECT * FROM leave1") or die($mysqli->error);
+    $result = $mysqli->query("SELECT * FROM data") or die($mysqli->error);
    // pre_r($result);
  
     ?>
@@ -68,8 +76,10 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Type</th>
-                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Designation</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
@@ -77,12 +87,14 @@
                 while ($row =$result->fetch_assoc()): ?>
             <div>
             <tr>
-                <td><?php echo $row['leavetypes'];?></td>
-                <td><?php echo $row['numleave'];?></td>
+                <td><?php echo $row['name'];?></td>
+                <td><?php echo $row['email'];?></td>
+                <td><?php echo $row['password'];?></td>
+                <td><?php echo $row['designation'];?></td>
                 <td>
-                    <a href="leave.php?edit=<?php echo $row['id'];?>"
+                    <a href="admin.php?edit=<?php echo $row['id'];?>"
                        class="btn btn-info">Edit</a>
-                    <a href="process1.php?delete=<?php echo $row['id'];?>"
+                    <a href="process.php?delete=<?php echo $row['id'];?>"
                        class="btn btn-danger">Delete</a>
                        
                 </td>
