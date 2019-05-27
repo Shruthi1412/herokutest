@@ -17,9 +17,9 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 	{
 
 		$image = $_POST['image'];
-		$name8 = $_POST['name8'];
-		$name9 = $_POST['name9'];
-		$name = $_POST['name'];
+		//$name8 = $_POST['name8'];
+		//$name9 = $_POST['name9'];
+		//$name = $_POST['name'];
 
 
 		//require_once('dbHelper.php');
