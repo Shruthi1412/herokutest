@@ -28,9 +28,9 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 
 		//$res = mysqli_query($con,$sql);
 
-		$extension='png';
-		$upload_path = 'https://github.com/Shruthi1412/herokutest/edit/master/uploads/';
-		$file_url = $upload_path . getFileName() . '.' . $extension;
+		//$extension='png';
+		//$upload_path = 'https://github.com/Shruthi1412/herokutest/edit/master/uploads/';
+		//$file_url = $upload_path . getFileName() . '.' . $extension;
 
 
 		//$id = 0;
@@ -38,36 +38,21 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 		//$path = "uploads/$id.png";
 
 		$actualpath = "$file_url";
+		
+		$sql = "INSERT INTO employee_profile (name,p_email,mobile,photo) VALUES ('$name','$name8','$name9','?')";
+		$stmt = mysqli_prepare($con,$sql);
 
-		$sql = "INSERT INTO employee_profile (name,p_email,mobile,photo) VALUES ('$name','$name8','$name9','$actualpath')";
-
-		if(mysqli_query($con,$sql))
-		{
-			file_put_contents($file_url,base64_decode($image));
-			echo "Successfully Uploaded";
+		mysqli_stmt_bind_param($stmt,"s",$image);
+		mysqli_stmt_execute($stmt);
+		
+		$check = mysqli_stmt_affected_rows($stmt);
+		
+		if($check == 1){
+			echo "Image Uploaded Successfully";
+		}else{
+			echo "Error Uploading Image";
 		}
-		else{
-					echo "Error uploading!! No duplicate entries allowed.";
-
-		}
-
 		mysqli_close($con);
-	}
-	else
-	{
+	}else{
 		echo "Error";
-	}
-
-
-	function getFileName()
-	{
-		$con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect...');
-		$sql = "SELECT max(id) as id FROM employee_profile";
-		$result = mysqli_fetch_array(mysqli_query($con,$sql));
-
-		mysqli_close($con);
-		if($result['id']==null)
-			return 1;
-		else
-			return ++$result['id'];
 	}
