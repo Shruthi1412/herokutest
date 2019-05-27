@@ -41,11 +41,11 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 		
 
 		$sql = "INSERT INTO employee_profile (name,p_email,mobile,photo) VALUES ('$name','$name8','$name9','$row[1])";
-
+		$dsql= "DELETE FROM images WHERE id='$row[0]'";
 		if(mysqli_query($con,$sql))
 		{
 			//file_put_contents($file_url,base64_decode($image));
-			$dsql= "DELETE FROM images WHERE id='$row[0]'";
+			
 			if(mysqli_query($con,$dsql){
 	
 			echo "Successfully Uploaded";
