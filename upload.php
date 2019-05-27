@@ -17,9 +17,9 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 	{
 
 		$image = $_POST['image'];
-		$name = $_POST['name'];
-		$name8 = $_POST['name8'];
-		$name9 = $_POST['name9'];
+		//$name = $_POST['name'];
+		//$name8 = $_POST['name8'];
+		//$name9 = $_POST['name9'];
 
 
 		//require_once('dbHelper.php');
@@ -38,12 +38,13 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 		//$path = "uploads/$id.png";
 
 		//$actualpath = "$file_url";
-		$sql = "INSERT INTO employee_profile (name,p_email,mobile,image) VALUES (?,?,?,?)";
+		
+		$sql = "INSERT INTO images (image) VALUES (?)";
 		
 		
 		$stmt = mysqli_prepare($con,$sql);
 
-		mysqli_stmt_bind_param($stmt,"n","$name","p","$name8","m","$name9","s",$image);
+		mysqli_stmt_bind_param($stmt,"s",$image);
 		mysqli_stmt_execute($stmt);
 		
 		$check = mysqli_stmt_affected_rows($stmt);
