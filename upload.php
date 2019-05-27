@@ -29,7 +29,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 		//$res = mysqli_query($con,$sql);
 
 		$extension='png';
-		$upload_path = 'uploads/';
+		$upload_path = 'https://github.com/Shruthi1412/herokutest/edit/master/uploads/';
 		$file_url = $upload_path . getFileName() . '.' . $extension;
 
 
