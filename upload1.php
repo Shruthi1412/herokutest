@@ -41,7 +41,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 
 		if(mysqli_query($con,$sql))
 		{
-			file_put_contents($file_url,base64_decode($image));
+			//file_put_contents($file_url,base64_decode($image));
 			echo "Successfully Uploaded";
 		}
 		else{
