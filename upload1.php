@@ -29,7 +29,10 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 		//$res = mysqli_query($con,$sql);
 
 		
-
+		$sql1= "SELECT * FROM images";
+		$res= mysqli_query($con,$sql1);
+		$row= mysqli_fetch_array($res);
+		
 
 		//$id = 0;
 
@@ -37,12 +40,16 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 
 		
 
-		$sql = "INSERT INTO employee_profile (name,p_email,mobile) VALUES ('$name','$name8','$name9')";
+		$sql = "INSERT INTO employee_profile (name,p_email,mobile,photo) VALUES ('$name','$name8','$name9','$row[1])";
 
 		if(mysqli_query($con,$sql))
 		{
 			//file_put_contents($file_url,base64_decode($image));
+			$dsql= "DELETE FROM images WHERE id='$row[0]'";
+			if(mysqli_query($con,$dsql){
+	
 			echo "Successfully Uploaded";
+			}
 		}
 		else{
 					echo "Error uploading!! No duplicate entries allowed.";
