@@ -29,7 +29,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 		//$res = mysqli_query($con,$sql);
 
 		$extension='png';
-		$upload_path = 'uploads/';
+		$upload_path = 'https://github.com/Shruthi1412/herokutest/edit/master/uploads/';
 		$file_url = $upload_path . getFileName() . '.' . $extension;
 
 
@@ -37,7 +37,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 
 		//$path = "uploads/$id.png";
 
-		$actualpath = "https://leavemanagementheroku.herokuapp.com/$file_url";
+		$actualpath = "$file_url";
 
 		$sql = "INSERT INTO employee_profile (name,p_email,mobile,photo) VALUES ('$name','$name8','$name9','$actualpath')";
 
