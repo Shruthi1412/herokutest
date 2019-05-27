@@ -1,13 +1,13 @@
 <?php
 
 
-define('HOST','localhost');// hostname/machineip/serverip is localhost
+define('HOST','arfo8ynm6olw6vpn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com');// hostname/machineip/serverip is localhost
 
-define('USER','root');// user in our case is root
+define('USER','ir7tqjrbc7r2a1yt');// user in our case is root
 
-define('PASS','');//password here is null or blank that is no password
+define('PASS','cz1omzq4rp47hmgf');//password here is null or blank that is no password
 
-define('DB','leave');
+define('DB','t3e5qwphdxcr97rb');
 
 //Connecting to Database
 
@@ -37,7 +37,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 
 		
 
-		$sql = "INSERT INTO employee_profile (name,p_email,mobile,photo) VALUES ('$name','$name8','$name9')";
+		$sql = "INSERT INTO employee_profile (name,p_email,mobile) VALUES ('$name','$name8','$name9')";
 
 		if(mysqli_query($con,$sql))
 		{
