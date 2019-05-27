@@ -38,12 +38,12 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 		//$path = "uploads/$id.png";
 
 		//$actualpath = "$file_url";
-		$sql = "INSERT INTO employee_profile (name,p_email,mobile,image) VALUES ('$name','$name8','$name9',?)";
+		$sql = "INSERT INTO employee_profile (name,p_email,mobile,image) VALUES (?,?,?,?)";
 		
 		
 		$stmt = mysqli_prepare($con,$sql);
 
-		mysqli_stmt_bind_param($stmt,"s",$image);
+		mysqli_stmt_bind_param($stmt,"n","$name","p","$name8","m","$name9","s",$image);
 		mysqli_stmt_execute($stmt);
 		
 		$check = mysqli_stmt_affected_rows($stmt);
