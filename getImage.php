@@ -9,7 +9,7 @@
 		
 		$result = mysqli_fetch_array($r);
 		
-		header('content-type: image/png');
+		header('content-type: image/jpeg');
 	
 		echo base64_decode($result['photo']);
 		
