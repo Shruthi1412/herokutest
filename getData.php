@@ -14,15 +14,8 @@
 		$result = array();
 		
 		array_push($result,array(
-			"name"=>$res['dob'],
-			"email"=>$res['qualification'],
-			"password"=>$res['designation'],
-			"password1"=>$res['doj'],
-			"password2"=>$res['f_name'],
-			"password3"=>$res['b_grp'],
-			"password4"=>$res['p_email'],
-			"password5"=>$res['photo'],
-			"password6"=>$res['mobile'],
+			"name"=>$res['p_email'],
+			"email"=>$res['mobile'],
 			
 			)
 		);
