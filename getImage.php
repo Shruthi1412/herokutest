@@ -2,7 +2,7 @@
  
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		$id = $_GET['id'];
-		$sql = "select * from images where id = '$id'";
+		$sql = "select photo from employee_profile where id = '$id'";
 		require_once('dbHelper.php');
 		
 		$r = mysqli_query($con,$sql);
