@@ -14,8 +14,8 @@
 		$result = array();
 		
 		array_push($result,array(
-			"p_email"=>$res['p_email'],
-			"mobile"=>$res['mobile'],
+			"address"=>$res['p_email'],
+			"vc"=>$res['mobile'],
 			
 			)
 		);
