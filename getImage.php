@@ -2,7 +2,7 @@
  
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		$id = $_GET['id'];
-		$sql = "select * from employee_profile where id = '$id'";
+		$sql = "select * from employee_profile where p_email = '$id'";
 		require_once('dbHelper.php');
 		
 		$r = mysqli_query($con,$sql);
