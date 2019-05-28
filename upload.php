@@ -50,7 +50,7 @@ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 		$check = mysqli_stmt_affected_rows($stmt);
 		
 		if($check == 1){
-			echo "Image Uploaded Successfully";
+			echo "Uploaded Successfully";
 		}else{
 			echo "Error Uploading Image";
 		}
