@@ -5,7 +5,7 @@
 		
 		require_once('dbHelper.php');
 		
-		$sql = "SELECT * FROM employee_profile WHERE emp_id='".$id."'";
+		$sql = "SELECT * FROM employee_profile WHERE name='".$id."'";
 		
 		$r = mysqli_query($con,$sql);
 		
@@ -14,8 +14,8 @@
 		$result = array();
 		
 		array_push($result,array(
-			"name"=>$res['p_email'],
-			"email"=>$res['mobile'],
+			"p_email"=>$res['p_email'],
+			"mobile"=>$res['mobile'],
 			
 			)
 		);
