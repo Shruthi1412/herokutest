@@ -2,7 +2,7 @@
  
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		$id = $_GET['id'];
-		$sql = "select photo from employee_profile where id = '$id'";
+		$sql = "select * from employee_profile where id = '$id'";
 		require_once('dbHelper.php');
 		
 		$r = mysqli_query($con,$sql);
@@ -11,7 +11,7 @@
 		
 		header('content-type: image/jpeg');
 	
-		echo base64_decode($result['image']);
+		echo base64_decode($result['photo']);
 		
 		mysqli_close($con);
 		
